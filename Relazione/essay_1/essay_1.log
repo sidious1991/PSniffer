@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.24)  9 JAN 2017 19:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.24)  11 JAN 2017 12:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -100,8 +100,7 @@ Package: wrapfig 2003/01/31  v 3.6
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count93
-)
-No file essay_1.aux.
+) (./essay_1.aux)
 \openout1 = `essay_1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -116,6 +115,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -210,61 +210,48 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 62.
+(Font)              <12> on input line 64.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 62.
+(Font)              <8> on input line 64.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 62.
+(Font)              <6> on input line 64.
 
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-No file essay_1.toc.
+(./essay_1.toc)
 \tf@toc=\write3
 \openout3 = `essay_1.toc'.
 
-[1]
-
-LaTeX Warning: Citation `Figueredo:2009dg' on page 2 undefined on input line 93
-.
-
-[2] <Pictures/placeholder.png, id=16, 281.05pt x 170.6375pt>
-File: Pictures/placeholder.png Graphic file (type png)
-
-<use Pictures/placeholder.png>
-Package pdftex.def Info: Pictures/placeholder.png used on input line 114.
-(pdftex.def)             Requested size: 209.12683pt x 126.97015pt.
- [3 <./Pictures/placeholder.png>]
-<Pictures/fish.png, id=20, 211.79124pt x 158.5925pt>
-File: Pictures/fish.png Graphic file (type png)
- <use Pictures/fish.png>
-Package pdftex.def Info: Pictures/fish.png used on input line 148.
-(pdftex.def)             Requested size: 158.93843pt x 119.01907pt.
-
-[4 <./Pictures/fish.png>] [5] [6] (./essay_1.aux)
-
-LaTeX Warning: There were undefined references.
+ [1]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 144.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 144.
+ [2] [3] [4]
+(./essay_1.aux) ) 
 Here is how much of TeX's memory you used:
- 2304 strings out of 493013
- 32854 string characters out of 6133327
- 199090 words of memory out of 5000000
- 5832 multiletter control sequences out of 15000+600000
+ 2311 strings out of 493013
+ 32935 string characters out of 6133327
+ 198116 words of memory out of 5000000
+ 5836 multiletter control sequences out of 15000+600000
  10398 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,5n,25p,233b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on essay_1.pdf (7 pages, 77610 bytes).
+ 40i,4n,25p,1082b,244s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmti12.pfb>
+Output written on essay_1.pdf (5 pages, 73895 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 40 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -46,27 +46,30 @@
 
 \center % Center everything on the page
 
-\textsc{\LARGE University Name}\\[1.5cm] % Name of your university/college
-\textsc{\Large Major Heading}\\[0.5cm] % Major heading such as course name
-\textsc{\large Minor Heading}\\[0.5cm] % Minor heading such as course title
+\textsc{\LARGE Universit\'a Tor Vergata}\\[1.5cm] % Name of your university/college
+\textsc{\Large Corso di Laurea di Ingegneria Informatica}\\[0.5cm] % Major heading such as course name
+\textsc{\large A.A. 2016-2017}\\[0.5cm] % Minor heading such as course title
 
 \HRule \\[0.4cm]
-{ \huge \bfseries Title}\\[0.4cm] % Title of your document
+{ \huge \bfseries Mobile Sniffing Tool}\\[0.4cm] % Title of your document
+{ \bfseries Progetto di Sicurezza Informatica e Internet}\\[0,4cm]
 \HRule \\[1.5cm]
 
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
-\emph{Author:}\\
-John \textsc{Smith} % Your name
+\emph{Autori:}\\
+Paolo \textsc{Salom\'e}\\
+Stefano \textsc{Agostini} % Your name
 \end{flushleft}
 \end{minipage}
 ~
 \begin{minipage}{0.4\textwidth}
 \begin{flushright} \large
-\emph{Supervisor:} \\
-Dr. James \textsc{Smith} % Supervisor's Name
+\emph{Supervisori:}\\
+Prof. Giuseppe \textsc{Italiano}\\ 
+Dr. Marco \textsc{Querini}  % Supervisor's Name
 \end{flushright}
-\end{minipage}\\[4cm]
+\end{minipage}\\[8,5cm]
 
 {\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
 
@@ -88,51 +91,64 @@ Dr. James \textsc{Smith} % Supervisor's Name
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
 
-\section{Introduction} % Major section
+\section{Introduzione} % Major section
 
-Example citation \cite{Figueredo:2009dg}.
+Nella societ\'a odierna vi \'e un larga diffusione di applicazioni mobile di messagistica che espongono implicitamente gli utenti a problematiche riguardanti la privacy. Infatti fino a qualche mese fa i dati in transito di Whatsapp (e.g.) erano in chiaro e quindi accedibili facilmente da chiunque utilizzasse una qualsiasi applicazione per lo sniffing (e.g. Whireshark). Tuttavia attualmente molte delle applicazioni di messaggistica hanno rimediato interamente o parzialmente utilizzando tecniche di crittografia end-to-end. 
+L'obiettivo del nostro progetto \'e la realizzazione di una applicazione per sistemi mobile Android che all'interno di una certa rete wifi catturi i dati in transito e li filtri in base ad un flag. In tal modo ci preponiamo l'obiettivo di isolare i pacchetti dati per ogni applicazione di messaggistica presa in considerazione e analizzarli.
+ 
+%------------------------------------------------
+
+%\subsection{Subsection 1} % Sub-section
+
+%\lipsum[1] % Dummy text
 
 %------------------------------------------------
 
-\subsection{Subsection 1} % Sub-section
+%\subsection{Subsection 2} % Sub-section
 
-\lipsum[1] % Dummy text
-
-%------------------------------------------------
-
-\subsection{Subsection 2} % Sub-section
-
-\lipsum[2] % Dummy text
+%\lipsum[2] % Dummy text
 
 %------------------------------------------------
 
-\subsubsection{Subsubsection 1} % Sub-sub-section
+%\subsubsection{Subsubsection 1} % Sub-sub-section
 
-\lipsum[3] % Dummy text
+%\lipsum[3] % Dummy text
 
-\begin{figure}[H] % Example image
-\center{\includegraphics[width=0.5\linewidth]{placeholder}}
-\caption{Example image.}
-\label{fig:speciation}
-\end{figure}
+%\begin{figure}[H] % Example image
+%\center{\includegraphics[width=0.5\linewidth]{placeholder}}
+%\caption{Example image.}
+%\label{fig:speciation}
+%\end{figure}
 
 %------------------------------------------------
 
-\subsubsection{Subsubsection 2} % Sub-sub-section
+%\subsubsection{Subsubsection 2} % Sub-sub-section
 
-\lipsum[4] % Dummy text
+%\lipsum[4] % Dummy text
 
 %----------------------------------------------------------------------------------------
 %	MAJOR SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Content Section} % Major section
+\section{Descrizione dell'Applicazione} % Major section
 
-\lipsum[5] % Dummy text
+Per realizzare uno \textit{sniffer Android} c'erano due strade alternative da poter seguire: sfruttare le \textit{Android VPN} oppure utilizzare l'eseguibile \textit{C tcpdump}. L'approccio \textit{Android VPN} consiste nella creazione di un'interfaccia \textit{VPNService}, gestita da una applicazione in \textit{userspace}, che una volta attivata forza tutto il traffico del \textit{device} ad attraversarla. Tuttavia questo approccio non permette la cattura di pacchetti appartenenti a dispositivi diversi da quello ospitante l'applicazione. Per utilizzare il secondo approccio \'e necessario che il dispositivo abbia i permessi di \textit{root} in quanto verr\'a eseguito uno \textit{script bash tcpdump}, il quale si occuper\'a di catturare i pacchetti. Inoltre questa libreria permette di sfruttare la scheda di rete in uso in varie modalit\'a (e.g. \textit{promiscous mode, monitor mode}) qualora il dispositivo lo consenta. La possibilit\'a di sfruttare a pieno le potenzialit\'a della scheda di rete ci ha indotto a scegliere \textit{tcpdump}.     
 
 %------------------------------------------------
 
-\subsection{Subsection 1} % Sub-section
+\subsection{Tcpdump} % Sub-section
+
+Il comando \textit{bash} dell'eseguibile \textit{tcpdump} permette l'inserimento di alcuni parametri che permettono la visualizzazione dei pacchetti in vari formati. Nel caso della nostra applicazione utilizziamo i seguenti parametri:
+
+\begin{itemize}
+\item \textbf{-i} : seguito dal nome dell'interfaccia, per specificare dove porsi in ascolto (e.g. wlan0)
+\item \textbf{-XX} in alternativa a \textbf{-A}: il primo stampa l'header di ogni pacchetto e i dati in esadecimale e \textit{ASCII} mentre il secondo non stampa l'esadecimale
+\item \textbf{-tttt}: stampa la data corrente davanti l'header di ogni pacchetto in formato \textit{YYYY-MM-DD hh:mm:ss:dddddd}
+\end{itemize}
+
+
+
+\subsection*{Struttura APK}
 
 \subsubsection{Subsubsection 1} % Sub-sub-section
 
@@ -140,33 +156,9 @@ Example citation \cite{Figueredo:2009dg}.
 
 %------------------------------------------------
 
-\subsubsection{Subsubsection 2} % Sub-sub-section
-
-\lipsum[6] % Dummy text
-\begin{wrapfigure}{l}{0.4\textwidth} % Inline image example
-  \begin{center}
-    \includegraphics[width=0.38\textwidth]{fish}
-  \end{center}
-  \caption{Fish}
-\end{wrapfigure}
-\lipsum[7-8] % Dummy text
 
 %------------------------------------------------
 
-\subsubsection{Subsubsection 3} % Sub-sub-section
-
-\begin{description} % Numbered list example
-
-\item[First] \hfill \\
-\lipsum[9] % Dummy text
-
-\item[Second] \hfill \\
-\lipsum[10] % Dummy text
-
-\item[Third] \hfill \\
-\lipsum[11] % Dummy text
-
-\end{description} 
 
 %----------------------------------------------------------------------------------------
 %	MAJOR SECTION X - TEMPLATE - UNCOMMENT AND FILL IN
