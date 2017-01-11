@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.24)  11 JAN 2017 12:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.24)  11 JAN 2017 19:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -100,21 +100,42 @@ Package: wrapfig 2003/01/31  v 3.6
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count93
-) (./essay_1.aux)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip43
+\subfigcapskip=\skip44
+\subfigcaptopadj=\dimen115
+\subfigbottomskip=\skip45
+\subfigcapmargin=\dimen116
+\subfiglabelskip=\skip46
+\c@subfigure=\count94
+\c@lofdepth=\count95
+\c@subtable=\count96
+\c@lotdepth=\count97
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip47
+\subfig@bottom=\skip48
+)
+(./essay_1.aux)
 \openout1 = `essay_1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -152,16 +173,16 @@ LaTeX Font Info:    ... okay on input line 37.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count94
-\scratchdimen=\dimen115
+\scratchcounter=\count98
+\scratchdimen=\dimen117
 \scratchbox=\box29
-\nofMPsegments=\count95
-\nofMParguments=\count96
+\nofMPsegments=\count99
+\nofMParguments=\count100
 \everyMPshowfont=\toks19
-\MPscratchCnt=\count97
-\MPscratchDim=\dimen116
-\MPnumerator=\count98
-\makeMPintoPDFobject=\count99
+\MPscratchCnt=\count101
+\MPscratchDim=\dimen118
+\MPnumerator=\count102
+\makeMPintoPDFobject=\count103
 \everyMPtoPDFconversion=\toks20
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
@@ -210,11 +231,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 64.
+(Font)              <12> on input line 65.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 64.
+(Font)              <8> on input line 65.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 64.
+(Font)              <6> on input line 65.
 
 [1
 
@@ -224,34 +245,91 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \openout3 = `essay_1.toc'.
 
  [1]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 144.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 145.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 144.
- [2] [3] [4]
-(./essay_1.aux) ) 
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 145.
+ [2]
+<tcpdump_XX.png, id=16, 717.68124pt x 206.7725pt>
+File: tcpdump_XX.png Graphic file (type png)
+ <use tcpdump_XX.png>
+Package pdftex.def Info: tcpdump_XX.png used on input line 153.
+(pdftex.def)             Requested size: 430.61206pt x 124.06445pt.
+
+Overfull \hbox (12.35838pt too wide) in paragraph at lines 153--154
+ [] 
+ []
+
+<tcpdump_A.png, id=17, 731.73375pt x 173.64874pt>
+File: tcpdump_A.png Graphic file (type png)
+ <use tcpdump_A.png>
+Package pdftex.def Info: tcpdump_A.png used on input line 158.
+(pdftex.def)             Requested size: 439.04364pt x 104.19005pt.
+
+Overfull \hbox (20.78996pt too wide) in paragraph at lines 158--159
+ [] 
+ []
+
+[3 <./tcpdump_XX.png> <./tcpdump_A.png>]
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+
+Overfull \hbox (1.38585pt too wide) in paragraph at lines 167--168
+[]\OT1/cmr/m/n/12 L'\OT1/cmr/m/it/12 Activity \OT1/cmr/m/n/12 di cat-tura espon
+e un'interfaccia sem-plice per im-postare la modalit^^Sa
+ []
+
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+<./activity1.jpeg, id=22, 722.7pt x 1284.8pt>
+File: ./activity1.jpeg Graphic file (type jpg)
+ <use ./activity1.jpeg>
+Package pdftex.def Info: ./activity1.jpeg used on input line 179.
+(pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
+
+<./activity2.jpeg, id=23, 722.7pt x 1284.8pt>
+File: ./activity2.jpeg Graphic file (type jpg)
+ <use ./activity2.jpeg>
+Package pdftex.def Info: ./activity2.jpeg used on input line 181.
+(pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
+
+<./filelist.jpeg, id=24, 722.7pt x 1284.8pt>
+File: ./filelist.jpeg Graphic file (type jpg)
+ <use ./filelist.jpeg>
+Package pdftex.def Info: ./filelist.jpeg used on input line 184.
+(pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
+
+<./activity2active.jpeg, id=25, 722.7pt x 1284.8pt>
+File: ./activity2active.jpeg Graphic file (type jpg)
+
+<use ./activity2active.jpeg>
+Package pdftex.def Info: ./activity2active.jpeg used on input line 186.
+(pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
+ [4] [5 <./activity1.jpeg> <./activity2.jpeg> <./filelist.jpeg> <./activity2act
+ive.jpeg>] [6] (./essay_1.aux) ) 
 Here is how much of TeX's memory you used:
- 2311 strings out of 493013
- 32935 string characters out of 6133327
- 198116 words of memory out of 5000000
- 5836 multiletter control sequences out of 15000+600000
+ 2518 strings out of 493013
+ 35961 string characters out of 6133327
+ 202042 words of memory out of 5000000
+ 6029 multiletter control sequences out of 15000+600000
  10398 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,4n,25p,1082b,244s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti12.pfb>
-Output written on essay_1.pdf (5 pages, 73895 bytes).
+ 40i,7n,25p,1082b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmti12.pfb>
+Output written on essay_1.pdf (7 pages, 462541 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

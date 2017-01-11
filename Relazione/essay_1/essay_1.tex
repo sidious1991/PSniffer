@@ -27,6 +27,7 @@
 \usepackage{wrapfig} % Allows in-line images such as the example fish picture
 
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{subfigure}
 
 \linespread{1.2} % Line spacing
 
@@ -146,10 +147,46 @@ Il comando \textit{bash} dell'eseguibile \textit{tcpdump} permette l'inserimento
 \item \textbf{-tttt}: stampa la data corrente davanti l'header di ogni pacchetto in formato \textit{YYYY-MM-DD hh:mm:ss:dddddd}
 \end{itemize}
 
+Di seguito inseriamo un pacchetto di esempio stampato da bash come risultato del comando \textit{sudo tcpdump -i wlan0 -XX -tttt} (figure \ref{fig:XX}) e del comando \textit{sudo tcpdump -i wlan0 -A -tttt} (figure \ref{fig:A}).
 
+\begin{figure}[H] % Example image
+\center{\includegraphics[scale=0.6]{tcpdump_XX.png}}
+\caption{Con opzione -XX}\label{fig:XX}
+\end{figure}
 
-\subsection*{Struttura APK}
+\begin{figure}[H] % Example image
+\center{\includegraphics[scale=0.6]{tcpdump_A.png}}
+\caption{Con opzione -A}\label{fig:A}
+\end{figure}
 
+\newpage
+\subsection{Struttura APK}
+La nostra \textit{APK} si compone di due \textit{Activity} e due \textit{Service}:
+
+\begin{itemize}
+\item L'\textit{Activity} di cattura espone un'interfaccia semplice per impostare la modalit\'a di cattura (specificare il \textit{flag} \textit{hex mode}). Successivamente l'utente pu\'o specificare il nome del file sul quale vuole che vengano salvati i pacchetti. Infine è possibile attivare il servizio di cattura.
+\item L'\textit{Activity} di filtraggio si occupa di fornire all'utente un elenco dei file contenenti i pacchetti, salvati dall'applicazione stessa nelle precedenti catture. Selezionato il file da elenco è possibile inserire la parola chiave di ricerca. Mediante il servizio di filtraggio \'e vengono scanditi i pacchetti e visualizzati in una lista soltanto quelli contenenti la parola desiderata.
+\item Il \textit{Service} di cattura si occupa dell'invocazione del comando \textit{tcpdump} con le opzioni e il nome del file passati dall'\textit{Activity} di cattura, redirezionando l'output su quest'ultimo. Quando questo servizio viene interrotto si esegue il comando bash \textit{pkill tcpdump} per terminare il comando dello \textit{sniffer}. 
+\item Il \textit{Service} di filtraggio agisce sul file selezionato esaminando ogni pacchetto e inserendolo in una lista visualizzata a schermo solo se contiene la \textit{keyword} fornita, all'interno dell'\textit{header} o del \textit{body}.
+\end{itemize}
+ 
+Di seguito inseriamo degli \textit{screen} dell'applicazione appena descritta (figure \ref{fig:apk}).
+ 
+ 
+\begin{figure}[htbp]
+\centering%
+\subfigure[Activity di cattura\label{fig:apk1}]%
+{\includegraphics[scale=0.2]{./activity1.jpeg}}\qquad\qquad
+\subfigure[Activity di filtraggio\label{fig:apk2}]%
+{\includegraphics[scale=0.2]{./activity2.jpeg}}\qquad\qquad
+\\
+\subfigure[Lista di file\label{fig:filelist}]%
+{\includegraphics[scale=0.2]{./filelist.jpeg}}\qquad\qquad
+\subfigure[Pacchetti filtrati\label{fig:apk2active}]%
+{\includegraphics[scale=0.2]{./activity2active.jpeg}}
+\caption{Pagine dell'applicazione\label{fig:apk}}
+\end{figure} 
+ 
 \subsubsection{Subsubsection 1} % Sub-sub-section
 
 \lipsum[6] % Dummy text
