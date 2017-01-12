@@ -2,5 +2,6 @@
 \contentsline {section}{\numberline {2}Descrizione dell'Applicazione}{2}
 \contentsline {subsection}{\numberline {2.1}Tcpdump}{2}
 \contentsline {subsection}{\numberline {2.2}Struttura APK}{4}
-\contentsline {subsubsection}{\numberline {2.2.1}Subsubsection 1}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}Activity di cattura}{4}
+\contentsline {subsubsection}{\numberline {2.2.2}Activity di filtraggio}{6}
 \contentsline {section}{\numberline {3}Conclusion}{6}

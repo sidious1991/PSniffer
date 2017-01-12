@@ -187,9 +187,38 @@ Di seguito inseriamo degli \textit{screen} dell'applicazione appena descritta (f
 \caption{Pagine dell'applicazione\label{fig:apk}}
 \end{figure} 
  
-\subsubsection{Subsubsection 1} % Sub-sub-section
+\subsubsection{Activity di cattura} % Sub-sub-section
+L'\textit{Activity} di cattura è implementata dalla classe \textit{MainActivity} e realizza la schermata iniziale per l'utente. Essa estende la classe \textit{AppCompatActivity} ed effettua l'\textit{override} dei metodi \textit{onCreate} e \textit{onTouchEvent}. Quest'ultimo implementa un \textit{listener} che, a seguito del primo tocco dell'utente, esegue le seguenti operazioni:
 
-\lipsum[6] % Dummy text
+\begin{itemize}
+\item Salva la posizione iniziale al tocco.
+\item Al rilascio calcola il \textit{delta} rispetto alla posizione iniziale.
+\item Se il \textit{delta} \'e maggiore di 400 \textit{pixel} verso sinistra invoca l'\textit{Activity} di filtraggio.  
+\end{itemize}
+
+Infine ci sono i due metodi legati ai bottoni di \textit{start} e \textit{stop} del servizio di cattura. Il metodo \textit{startclick} esegue i seguenti passi all'invocazione:
+
+\begin{itemize}
+\item Cerca il riferimento all'\textit{editText} contenente il nome del file in cui salvare i pacchetti catturati.
+\item Verifica lo stato della \textit{checkbox} relativa alla modalit\'a \textit{hex mode}.
+\item Crea l'\textit{Intent} da passare al servizio di cattura.
+\item Utilizza il metodo \textit{putExtra} dell'\textit{Intent} per passare i parametri di cattura al servizio (\textit{path} del file e eventualmente il \textit{flag hex}).
+\end{itemize}
+
+Il metodo \textit{stopclick} crea un nuovo \textit{Intent} per il servizio di cattura avviato precedentemente e invoca il metodo \textit{stopService} per forzarne l'interruzione.
+
+\subsubsection{Activity di filtraggio}
+Questa \textit{Activity} \'e implementata dalla classe \textit{SecondActivity} la quale estende la classe \textit{AppCompatActivity}. Il metodo \textit{OnCreate} effettua le seguenti operazioni:
+
+\begin{itemize}
+\item Recupera lo \textit{switch} relativo all'attivazione del servizio di filtraggio.
+\item Inizializza lo stato dello \textit{switch} a \textit{false}.
+\item Fa l'\textit{override} del metodo \textit{OnCheckedChanged}, il quale rappresenta il \textit{listener} dello \textit{switch}. Quest'ultimo:
+\begin{itemize}
+\item Se lo \textit{switch} \'e \textit{checked} inizializza la \textit{ListView} che apparir\'a a schermo e l'\textit{Adapter} ad essa associato. Successivamente invoca il metodo \textit{viewFile} di cui parleremo in seguito.
+\item Se lo \textit{switch} \'e \textit{unchecked} invoca il metodo \textit{stopServ}.
+\end{itemize}
+\end{itemize}
 
 %------------------------------------------------
 
