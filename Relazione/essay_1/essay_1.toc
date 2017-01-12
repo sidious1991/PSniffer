@@ -4,4 +4,4 @@
 \contentsline {subsection}{\numberline {2.2}Struttura APK}{4}
 \contentsline {subsubsection}{\numberline {2.2.1}Activity di cattura}{4}
 \contentsline {subsubsection}{\numberline {2.2.2}Activity di filtraggio}{6}
-\contentsline {section}{\numberline {3}Conclusion}{6}
+\contentsline {section}{\numberline {3}Conclusion}{7}

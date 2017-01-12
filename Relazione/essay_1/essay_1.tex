@@ -218,6 +218,8 @@ Questa \textit{Activity} \'e implementata dalla classe \textit{SecondActivity} l
 \item Se lo \textit{switch} \'e \textit{checked} inizializza la \textit{ListView} che apparir\'a a schermo e l'\textit{Adapter} ad essa associato. Successivamente invoca il metodo \textit{viewFile} di cui parleremo in seguito.
 \item Se lo \textit{switch} \'e \textit{unchecked} invoca il metodo \textit{stopServ}.
 \end{itemize}
+\item Preleva tutti i file relativi alle precedenti registrazioni di pacchetti fatti dall'applicazione. I file sono raggruppati in una cartella sul dispositivo.
+\item Prelevati i file questi vengono inseriti in una lista di stringhe. Quest'ultima verr\'a associata con un \textit{adapter} ad uno \textit{spinner} per consentire all'utente la selezione di un file.
 \end{itemize}
 
 %------------------------------------------------
