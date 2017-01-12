@@ -222,6 +222,19 @@ Questa \textit{Activity} \'e implementata dalla classe \textit{SecondActivity} l
 \item Prelevati i file questi vengono inseriti in una lista di stringhe. Quest'ultima verr\'a associata con un \textit{adapter} ad uno \textit{spinner} per consentire all'utente la selezione di un file.
 \end{itemize}
 
+Il metodo \textit{viewFile} effettua le seguenti operazioni:
+
+\begin{itemize}
+\item Preleva il nome del file dallo \textit{Spinner} ed il filtro.
+\item Crea l'\textit{Intent} relativo al servizio di filtraggio ed aggiunge come parametri il \textit{filepath} ed il \textit{filter}.
+\item Invoca il metodo \textit{startService} con parametro l'\textit{Intent} appena creato.
+\end{itemize}
+
+Il metodo \textit{stopServ} crea un nuovo \textit{Intent} per il servizio di filtraggio avviato precedentemente e invoca il metodo \textit{stopService} per forzarne l'interruzione.
+
+Questa \textit{Activity} utilizza un \textit{BroadcastReceiver} per ricevere i dati elaborati dal servizio invocato. Di questo \textit{Receiver} viene fatto l'\textit{override} del metodo \textit{onReceive} il quale, in ricezione dei dati inviati dal servizio, aggiorna la \textit{ListView} presente nell'\textit{Activiy} stessa. Per utilizzare il \textit{BroadcastReceiver} col metodo \textit{onReceive} esso deve essere registrato mediante il metodo \textit{onResume}, il quale accetta un \textit{flag} per identificare gli \textit{Intent} da gestire (nel nostro sistema \textit{filterMessage}). D'altro canto il metodo \textit{onPause} serve a deregistrare il \textit{BroadcastReceiver} quando l'\textit{Activity} \'e in pausa.
+
+Infine \'e implementato il metodo \textit{onTouchEvent} che si comporta esattamente come quello dell'\textit{Activity} precedentemente illustrata.
 %------------------------------------------------
 
 
