@@ -49,7 +49,7 @@
 
 \textsc{\LARGE Universit\'a Tor Vergata}\\[1.5cm] % Name of your university/college
 \textsc{\Large Corso di Laurea di Ingegneria Informatica}\\[0.5cm] % Major heading such as course name
-\textsc{\large A.A. 2016-2017}\\[0.5cm] % Minor heading such as course title
+\textsc{\large A.A. 2015-2016}\\[0.5cm] % Minor heading such as course title
 
 \HRule \\[0.4cm]
 { \huge \bfseries Mobile Sniffing Tool}\\[0.4cm] % Title of your document
@@ -235,6 +235,72 @@ Il metodo \textit{stopServ} crea un nuovo \textit{Intent} per il servizio di fil
 Questa \textit{Activity} utilizza un \textit{BroadcastReceiver} per ricevere i dati elaborati dal servizio invocato. Di questo \textit{Receiver} viene fatto l'\textit{override} del metodo \textit{onReceive} il quale, in ricezione dei dati inviati dal servizio, aggiorna la \textit{ListView} presente nell'\textit{Activiy} stessa. Per utilizzare il \textit{BroadcastReceiver} col metodo \textit{onReceive} esso deve essere registrato mediante il metodo \textit{onResume}, il quale accetta un \textit{flag} per identificare gli \textit{Intent} da gestire (nel nostro sistema \textit{filterMessage}). D'altro canto il metodo \textit{onPause} serve a deregistrare il \textit{BroadcastReceiver} quando l'\textit{Activity} \'e in pausa.
 
 Infine \'e implementato il metodo \textit{onTouchEvent} che si comporta esattamente come quello dell'\textit{Activity} precedentemente illustrata.
+
+\subsubsection{Service di cattura}
+Questo servizio \'e implementato dalla classe \textit{RegisterService}. Nel metodo \textit{onStartCommand} viene avviato lo \textit{sniffer} in seguito ai seguenti passi:
+
+\begin{itemize}
+\item Vengono estratti dall'\textit{Intent} passato dalla \textit{MainActivity} il \textit{path} del file ed eventualmente il \textit{flag} contenente l'\textit{hex mode}.
+\item Vengono preparati i comandi da eseguire su \textit{bash} ovvero \textbf{su} per garantire i dovuti permessi di \textit{superuser} e il comando \textbf{tcpdump}.
+\item Viene creato ed eseguito un processo \textit{bash}.
+\item Viene effettuato un collegamento con l'\textit{OutputStream} del processo e vengono scritti i comandi da eseguire preparati in precedenza.
+\item Al termine della scrittura viene opportunamente chiuso il collegamento con l'\textit{OutputStream} del processo.
+\end{itemize}
+
+Il metodo \textit{onDestroy} ha una struttura simile al metodo \textit{onStartCommand}, con la differenza nei comandi da eseguire su \textit{bash}. Esegue la terminazione dei processi precedentemente avviati tramite il comando \textbf{pkill tcpdump}. Infine termina il servizio tramite la chiamata al metodo \textit{this.stopSelf}. 
+
+\subsubsection{Servizio di filtraggio}
+La classe \textit{FilterService}, a differenza del \textit{Service} di cattura, \'e un \textit{IntentService}. Un \textit{Service} di questo tipo riesce ad eseguire richieste asincrone fornite dal \textit{Client} tramite un suo \textit{working thread}, diverso dal \textit{main thread} dell'applicazione. In tal modo si alleggerisce del lavoro il \textit{main thread} il quale pu\'o nel frattempo occuparsi di altro. Inoltre un \textit{IntentService} \'e in grado di eseguire pi\'u richieste, accodandole una dopo l'altra.
+
+Abbiamo deciso di utilizzare questa soluzione poich\'e filtrare file di grandi dimensioni (come il caso di file contenenti pacchetti dati) avrebbe potuto causare attese molto lunghe e nei casi peggiori ledere la stabilit\'a dell'applicazione, causandone persino il \textit{chash}.
+
+Il metodo \textit{onHandleIntent} si preoccupa di innescare il \textit{working thread} all'arrivo dell'\textit{Intent}, il quale esegue i seguenti passi:
+
+\begin{itemize}
+\item Recupera dall'\textit{Intent} inviato dall'\textit{Activity} di filtraggio il \textit{path} del file e il \textit{filter}.
+\item Apre il file per collegarlo ad un oggetto \textit{BufferedReader}.
+\item Vengono definite due stringhe utili ad identificare l'\textit{header} di ogni pacchetto: esse sono \textit{"IP" e "ARP"} poich\'e qualsiasi pacchetto nell'\textit{header} ha per identificativo anche il relativo protocollo di rete. Inoltre vengono inizializzate come stringhe vuote \textit{header e body} utili a contenere l'\textit{header} e il \textit{body} del pacchetto corrente.
+\item Viene letto il file riga per riga ed ognuna di queste viene concatenata alla stringa \textit{header} se contiene \textit{"IP" o "ARP"} e nel caso contrario viene concatenata alla stringa \textit{body}.
+\item Ogni volta che viene idenficato un nuovo \textit{header} vengono controllate le stringe \textit{header e body} relative al pacchetto precedente e, nel caso contengano la stringa \textit{filter}, allora verra invocata la \textit{sendBroadcast} con queste come parametri. Dopodich\'e viene azzerata la stringa \textit{body} e assegnato l'\textit{header} appena identificato alla stringa \textit{header}.
+\item Al termine del file viene chiuso il \textit{BufferedReader}. 
+\end{itemize}
+
+Il metodo \textit{sendBroadcast} crea un \textit{Intent} identificato dalla stringa \textit{"filterMessage"} (in modo da essere gestito dall'\textit{Activity} di filtraggio) e mediante il suo metodo \textit{putExtra} vi allega i parametri \textit{header e packet}. A questo punto invia l'\textit{Intent} tramite il \textit{LocalBroadcastManager} il quale, a differenza della versione globale, permette di non disperdere i messaggi al di fuori dell'applicazione stessa. Tutto ci\'o offre vantaggi in termini di \textit{privacy} (poich\'e questi dati non sono visibili alle altre \textit{app}), in termini di prestazioni per lo stesso motivo e in termini di sicurezza poich\'e le altre applicazioni non possono inviare dati malevoli nella nostra \textit{app}.
+
+Il metodo \textit{onDestroy} quando invocato termina il servizio.
+
+\section{Test}
+
+\subsection{Test sulle applicazioni di messaggistica}
+\'E stato selezionato un campione di dieci applicazioni di messaggistica per valutarne il grado di sicurezza percepito in seguito alla lettura dei pacchetti catturati mediante la nostra applicazione (identificazione di possibili \textit{security flaws}). Di seguito elenchiamo le dieci applicazioni da noi testate: \textit{Whatsapp, Telegram, Snapchat, Badoo, Instagram, Viber, Messanger(Facebook), Hangout, Line, Skype}.
+Per ognuna di queste \textit{app} abbiamo scambiato dei messaggi ed in parallelo eseguito lo \textit{sniffing} per mezzo della nostra applicazione. Al termine di ogni cattura, per esaminare il contenuto dei pacchetti, abbiamo usufrito del filtro precedentemente descritto, messo a disposizione dalla nostra applicazione. In questo modo abbiamo provato a cercare frammenti di conversazione tra i pacchetti, senza avere alcun risultato positivo da nessuna delle applicazioni in quanto tutti i pacchetti sono risultati cifrati. Tuttavia la met\'a delle \textit{app} presenta dei pacchetti riconoscibili tramite il nome stesso dell'applicazione (presente a volte nell'\textit{header} e altre nel \textit{body}).
+Di seguito verranno mostrati degli \textit{screen} relativi alle applicazioni i cui pacchetti sono stati riconosciuti.
+
+\begin{figure}[htbp]
+\centering%
+\subfigure[Pacchetto Badoo\label{fig:badoo}]%
+{\includegraphics[scale=0.25]{./badoo.jpeg}}\qquad\qquad
+\subfigure[Pacchetto Instagram\label{fig:instagram}]%
+{\includegraphics[scale=0.25]{./instagram.jpeg}}
+\caption{Applicazioni Analizzate (1)\label{fig:app1}}
+\end{figure} 
+
+
+
+\begin{figure}[htbp]
+\centering%
+\subfigure[Pacchetto Messenger\label{fig:messenger}]%
+{\includegraphics[scale=0.2]{./messenger.jpeg}}\qquad\qquad
+\subfigure[Pacchetto Skype\label{fig:skype}]%
+{\includegraphics[scale=0.2]{./skype.jpeg}}
+\\
+\subfigure[Pacchetto Snapchat\label{fig:spapchat}]%
+{\includegraphics[scale=0.2]{./snap.jpeg}}
+\caption{Applicazioni Analizzate (2)\label{fig:app2}}
+\end{figure}
+
+\subsection{Test integrativi sulle modalit\'a di utilizzo della scheda di rete}
+
 %------------------------------------------------
 
 
@@ -261,9 +327,8 @@ Infine \'e implementato il metodo \textit{onTouchEvent} che si comporta esattame
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
 
-\section{Conclusion} % Major section
+\section{Conclusioni} % Major section
 
-\lipsum[12-13]
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
