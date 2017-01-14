@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.24)  13 JAN 2017 18:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.11.24)  14 JAN 2017 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -244,33 +244,38 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `essay_1.toc'.
 
- [1]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 145.
+ [1] [2]
+Overfull \hbox (14.8889pt too wide) in paragraph at lines 144--145
+[]\OT1/cmr/m/n/12 Il co-mando \OT1/cmr/m/it/12 bash \OT1/cmr/m/n/12 dell'esegui
+bile \OT1/cmr/m/it/12 tcp-dump \OT1/cmr/m/n/12 per-me-tte l'inserimento di al-c
+uni parametri
+ []
 
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 147.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 145.
- [2]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 147.
+
 <tcpdump_XX.png, id=16, 717.68124pt x 206.7725pt>
 File: tcpdump_XX.png Graphic file (type png)
  <use tcpdump_XX.png>
-Package pdftex.def Info: tcpdump_XX.png used on input line 153.
+Package pdftex.def Info: tcpdump_XX.png used on input line 155.
 (pdftex.def)             Requested size: 430.61206pt x 124.06445pt.
 
-Overfull \hbox (12.35838pt too wide) in paragraph at lines 153--154
+Overfull \hbox (12.35838pt too wide) in paragraph at lines 155--156
  [] 
  []
 
 <tcpdump_A.png, id=17, 731.73375pt x 173.64874pt>
 File: tcpdump_A.png Graphic file (type png)
  <use tcpdump_A.png>
-Package pdftex.def Info: tcpdump_A.png used on input line 158.
+Package pdftex.def Info: tcpdump_A.png used on input line 160.
 (pdftex.def)             Requested size: 439.04364pt x 104.19005pt.
 
-Overfull \hbox (20.78996pt too wide) in paragraph at lines 158--159
+Overfull \hbox (20.78996pt too wide) in paragraph at lines 160--161
  [] 
  []
 
@@ -278,7 +283,7 @@ Overfull \hbox (20.78996pt too wide) in paragraph at lines 158--159
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
 
-Overfull \hbox (1.38585pt too wide) in paragraph at lines 167--168
+Overfull \hbox (1.38585pt too wide) in paragraph at lines 169--170
 []\OT1/cmr/m/n/12 L'\OT1/cmr/m/it/12 Activity \OT1/cmr/m/n/12 di cat-tura espon
 e un'interfaccia sem-plice per im-postare la modalit^^Sa
  []
@@ -288,26 +293,26 @@ Missing character: There is no ¨ in font cmr12!
 <./activity1.jpeg, id=22, 722.7pt x 1284.8pt>
 File: ./activity1.jpeg Graphic file (type jpg)
  <use ./activity1.jpeg>
-Package pdftex.def Info: ./activity1.jpeg used on input line 179.
+Package pdftex.def Info: ./activity1.jpeg used on input line 181.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
 <./activity2.jpeg, id=23, 722.7pt x 1284.8pt>
 File: ./activity2.jpeg Graphic file (type jpg)
  <use ./activity2.jpeg>
-Package pdftex.def Info: ./activity2.jpeg used on input line 181.
+Package pdftex.def Info: ./activity2.jpeg used on input line 183.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
 <./filelist.jpeg, id=24, 722.7pt x 1284.8pt>
 File: ./filelist.jpeg Graphic file (type jpg)
  <use ./filelist.jpeg>
-Package pdftex.def Info: ./filelist.jpeg used on input line 184.
+Package pdftex.def Info: ./filelist.jpeg used on input line 186.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
 <./activity2active.jpeg, id=25, 722.7pt x 1284.8pt>
 File: ./activity2active.jpeg Graphic file (type jpg)
 
 <use ./activity2active.jpeg>
-Package pdftex.def Info: ./activity2active.jpeg used on input line 186.
+Package pdftex.def Info: ./activity2active.jpeg used on input line 188.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¨ in font cmr12!
@@ -316,57 +321,62 @@ ive.jpeg>] [6] [7] [8] [9]
 <./badoo.jpeg, id=46, 722.7pt x 1284.8pt>
 File: ./badoo.jpeg Graphic file (type jpg)
  <use ./badoo.jpeg>
-Package pdftex.def Info: ./badoo.jpeg used on input line 282.
+Package pdftex.def Info: ./badoo.jpeg used on input line 284.
 (pdftex.def)             Requested size: 180.67455pt x 321.19922pt.
 
 <./instagram.jpeg, id=47, 722.7pt x 1284.8pt>
 File: ./instagram.jpeg Graphic file (type jpg)
  <use ./instagram.jpeg>
-Package pdftex.def Info: ./instagram.jpeg used on input line 284.
+Package pdftex.def Info: ./instagram.jpeg used on input line 286.
 (pdftex.def)             Requested size: 180.67455pt x 321.19922pt.
 
 <./messenger.jpeg, id=48, 722.7pt x 1284.8pt>
 File: ./messenger.jpeg Graphic file (type jpg)
  <use ./messenger.jpeg>
-Package pdftex.def Info: ./messenger.jpeg used on input line 293.
+Package pdftex.def Info: ./messenger.jpeg used on input line 295.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
 <./skype.jpeg, id=49, 722.7pt x 1284.8pt>
 File: ./skype.jpeg Graphic file (type jpg)
  <use ./skype.jpeg>
-Package pdftex.def Info: ./skype.jpeg used on input line 295.
+Package pdftex.def Info: ./skype.jpeg used on input line 297.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
 <./snap.jpeg, id=50, 722.7pt x 1284.8pt>
 File: ./snap.jpeg Graphic file (type jpg)
  <use ./snap.jpeg>
-Package pdftex.def Info: ./snap.jpeg used on input line 298.
+Package pdftex.def Info: ./snap.jpeg used on input line 300.
 (pdftex.def)             Requested size: 144.53743pt x 256.95544pt.
 
 
-LaTeX Warning: Float too large for page by 1.18059pt on input line 300.
+LaTeX Warning: Float too large for page by 1.18059pt on input line 302.
 
-[10 <./badoo.jpeg> <./instagram.jpeg>] [11 <./messenger.jpeg> <./skype.jpeg> <.
-/snap.jpeg>] [12] (./essay_1.aux) ) 
+<./tabella.png, id=51, 604.2575pt x 395.4775pt>
+File: ./tabella.png Graphic file (type png)
+ <use ./tabella.png>
+Package pdftex.def Info: ./tabella.png used on input line 306.
+(pdftex.def)             Requested size: 350.46959pt x 229.3771pt.
+ [10 <./badoo.jpeg> <./instagram.jpeg>] [11 <./messenger.jpeg> <./skype.jpeg> <
+./snap.jpeg>] [12 <./tabella.png>] [13] (./essay_1.aux) ) 
 Here is how much of TeX's memory you used:
- 2557 strings out of 493013
- 36564 string characters out of 6133327
- 202175 words of memory out of 5000000
- 6063 multiletter control sequences out of 15000+600000
+ 2563 strings out of 493013
+ 36657 string characters out of 6133327
+ 202184 words of memory out of 5000000
+ 6068 multiletter control sequences out of 15000+600000
  10398 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,7n,25p,1082b,261s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmti12.pfb>
-Output written on essay_1.pdf (13 pages, 1149556 bytes).
+</usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on essay_1.pdf (14 pages, 1180363 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 49 compressed objects within 1 object stream
+ 86 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

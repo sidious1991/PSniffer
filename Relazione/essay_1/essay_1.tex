@@ -139,7 +139,9 @@ Per realizzare uno \textit{sniffer Android} c'erano due strade alternative da po
 
 \subsection{Tcpdump} % Sub-section
 
-Il comando \textit{bash} dell'eseguibile \textit{tcpdump} permette l'inserimento di alcuni parametri che permettono la visualizzazione dei pacchetti in vari formati. Nel caso della nostra applicazione utilizziamo i seguenti parametri:
+\textit{Tcpdump} \'e un eseguibile \textit{command-line} basato su \textit{libpcap}, una libreria \textit{C} portabile che offre \textit{API} utili per la cattura del traffico di rete. Abbiamo deciso di utilizzare \textit{tcpdump} anzich\'e direttamente le \textit{API} di \textit{libpcap} poich\'e esso si presta maggiormente all'esecuzione su piattaforma \textit{Android} (si esegue direttamente su \textit{bash}).
+
+Il comando \textit{bash} dell'eseguibile \textit{tcpdump} permette l'inserimento di alcuni parametri che consentono la visualizzazione dei pacchetti in vari formati. Nel caso della nostra applicazione utilizziamo i seguenti parametri:
 
 \begin{itemize}
 \item \textbf{-i} : seguito dal nome dell'interfaccia, per specificare dove porsi in ascolto (e.g. wlan0)
@@ -274,7 +276,7 @@ Il metodo \textit{onDestroy} quando invocato termina il servizio.
 \subsection{Test sulle applicazioni di messaggistica}
 \'E stato selezionato un campione di dieci applicazioni di messaggistica per valutarne il grado di sicurezza percepito in seguito alla lettura dei pacchetti catturati mediante la nostra applicazione (identificazione di possibili \textit{security flaws}). Di seguito elenchiamo le dieci applicazioni da noi testate: \textit{Whatsapp, Telegram, Snapchat, Badoo, Instagram, Viber, Messanger(Facebook), Hangout, Line, Skype}.
 Per ognuna di queste \textit{app} abbiamo scambiato dei messaggi ed in parallelo eseguito lo \textit{sniffing} per mezzo della nostra applicazione. Al termine di ogni cattura, per esaminare il contenuto dei pacchetti, abbiamo usufrito del filtro precedentemente descritto, messo a disposizione dalla nostra applicazione. In questo modo abbiamo provato a cercare frammenti di conversazione tra i pacchetti, senza avere alcun risultato positivo da nessuna delle applicazioni in quanto tutti i pacchetti sono risultati cifrati. Tuttavia la met\'a delle \textit{app} presenta dei pacchetti riconoscibili tramite il nome stesso dell'applicazione (presente a volte nell'\textit{header} e altre nel \textit{body}).
-Di seguito verranno mostrati degli \textit{screen} relativi alle applicazioni i cui pacchetti sono stati riconosciuti.
+Di seguito verranno mostrati degli \textit{screen} relativi alle applicazioni i cui pacchetti sono stati riconosciuti (figure \ref{fig:app1} e \ref{fig:app2}). 
 
 \begin{figure}[htbp]
 \centering%
@@ -285,7 +287,7 @@ Di seguito verranno mostrati degli \textit{screen} relativi alle applicazioni i 
 \caption{Applicazioni Analizzate (1)\label{fig:app1}}
 \end{figure} 
 
-
+Inoltre nella tabella seguente vengono riassunti per ogni \textit{app} i \textit{security flaws} relativi all'\textit{header} ed al \textit{body} dei pacchetti (figure \ref{fig:table}).
 
 \begin{figure}[htbp]
 \centering%
@@ -299,27 +301,13 @@ Di seguito verranno mostrati degli \textit{screen} relativi alle applicazioni i 
 \caption{Applicazioni Analizzate (2)\label{fig:app2}}
 \end{figure}
 
+\begin{figure}
+\centering
+\includegraphics[scale=0.58]{./tabella.png}
+\caption{Tabella delle applicazioni\label{fig:table}}
+\end{figure}
+
 \subsection{Test integrativi sulle modalit\'a di utilizzo della scheda di rete}
-
-%------------------------------------------------
-
-
-%------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-%	MAJOR SECTION X - TEMPLATE - UNCOMMENT AND FILL IN
-%----------------------------------------------------------------------------------------
-
-%\section{Content Section}
-
-%\subsection{Subsection 1} % Sub-section
-
-% Content
-
-%------------------------------------------------
-
-%\subsection{Subsection 2} % Sub-section
 
 % Content
 
@@ -327,7 +315,10 @@ Di seguito verranno mostrati degli \textit{screen} relativi alle applicazioni i 
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
 
-\section{Conclusioni} % Major section
+\section{Conclusioni e sviluppi futuri} % Major section
+Sebbene la maggior parte delle applicazioni di messaggistica abbiamo fatto ricorso ad una forma di criptazione, alcune di esse presentano ancora alcune lacune in ambito di sicurezza. Infatti, come da noi dimostrato, \textit{app} come ad esempio \textit{Snapchat}, \textit{Badoo} e \textit{Instagram} espongono i propri pacchetti dati ad un elevato livello di riconoscibilit\'a. Un ipotetico attaccante, sebbene abbia un compito non banale quale la decriptazione di pacchetti, potrebbe pertanto distinguere da una grande mole di dati il suo target in maniera molto pi\'u immediata ed intuitiva. Tutto ci\'o dimostra che potrebbe essere necessario estendere la criptazione anche a porzioni del pacchetto che non rappresentano il \textit{payload}.
+Per quanto riguarda migliorie relative allo \textit{sniffer} evidenziamo un utilizzo miglire e pi\'u esteso delle opzioni della libreria \textit{tcpdump}. Essa infatti permette di combinare vari \textit{flag} in modo da ottenere una visualizzazione pacchetti il pi\'u vicina possibile al formato desiderato dall'utente. Invece dal punto di vista dell'applicazione \textit{Android} bisognerebbe apportare modifiche all'interfaccia grafica dell'\textit{Activity} di filtraggio ed aggiungervi opzioni utili ad evidenziare porzioni desiderate della lista dei pacchetti.
+
 
 
 %----------------------------------------------------------------------------------------

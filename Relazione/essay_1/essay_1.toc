@@ -9,4 +9,4 @@
 \contentsline {section}{\numberline {3}Test}{9}
 \contentsline {subsection}{\numberline {3.1}Test sulle applicazioni di messaggistica}{9}
 \contentsline {subsection}{\numberline {3.2}Test integrativi sulle modalit\'a di utilizzo della scheda di rete}{12}
-\contentsline {section}{\numberline {4}Conclusion}{12}
+\contentsline {section}{\numberline {4}Conclusioni e sviluppi futuri}{12}
