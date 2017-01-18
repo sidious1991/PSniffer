@@ -168,8 +168,8 @@ Di seguito inseriamo un pacchetto di esempio stampato da bash come risultato del
 La nostra \textit{APK} si compone di due \textit{Activity} e due \textit{Service}:
 
 \begin{itemize}
-\item L'\textit{Activity} di cattura espone un'interfaccia semplice per impostare la modalit\'a di cattura (specificare il \textit{flag} \textit{hex mode}). Successivamente l'utente pu\'o specificare il nome del file sul quale vuole che vengano salvati i pacchetti. Infine è possibile attivare il servizio di cattura.
-\item L'\textit{Activity} di filtraggio si occupa di fornire all'utente un elenco dei file contenenti i pacchetti, salvati dall'applicazione stessa nelle precedenti catture. Selezionato il file da elenco è possibile inserire la parola chiave di ricerca. Mediante il servizio di filtraggio \'e vengono scanditi i pacchetti e visualizzati in una lista soltanto quelli contenenti la parola desiderata.
+\item L'\textit{Activity} di cattura espone un'interfaccia semplice per impostare la modalit\'a di cattura (specificare il \textit{flag} \textit{hex mode}). Successivamente l'utente pu\'o specificare il nome del file sul quale vuole che vengano salvati i pacchetti. Infine \'e possibile attivare il servizio di cattura.
+\item L'\textit{Activity} di filtraggio si occupa di fornire all'utente un elenco dei file contenenti i pacchetti, salvati dall'applicazione stessa nelle precedenti catture. Selezionato il file da elenco \'e possibile inserire la parola chiave di ricerca. Mediante il servizio di filtraggio \'e vengono scanditi i pacchetti e visualizzati in una lista soltanto quelli contenenti la parola desiderata.
 \item Il \textit{Service} di cattura si occupa dell'invocazione del comando \textit{tcpdump} con le opzioni e il nome del file passati dall'\textit{Activity} di cattura, redirezionando l'output su quest'ultimo. Quando questo servizio viene interrotto si esegue il comando bash \textit{pkill tcpdump} per terminare il comando dello \textit{sniffer}. 
 \item Il \textit{Service} di filtraggio agisce sul file selezionato esaminando ogni pacchetto e inserendolo in una lista visualizzata a schermo solo se contiene la \textit{keyword} fornita, all'interno dell'\textit{header} o del \textit{body}.
 \end{itemize}
@@ -192,7 +192,7 @@ Di seguito inseriamo degli \textit{screen} dell'applicazione appena descritta (f
 \end{figure} 
  
 \subsubsection{Activity di cattura} % Sub-sub-section
-L'\textit{Activity} di cattura è implementata dalla classe \textit{MainActivity} e realizza la schermata iniziale per l'utente. Essa estende la classe \textit{AppCompatActivity} ed effettua l'\textit{override} dei metodi \textit{onCreate} e \textit{onTouchEvent}. Quest'ultimo implementa un \textit{listener} che, a seguito del primo tocco dell'utente, esegue le seguenti operazioni:
+L'\textit{Activity} di cattura \'e implementata dalla classe \textit{MainActivity} e realizza la schermata iniziale per l'utente. Essa estende la classe \textit{AppCompatActivity} ed effettua l'\textit{override} dei metodi \textit{onCreate} e \textit{onTouchEvent}. Quest'ultimo implementa un \textit{listener} che, a seguito del primo tocco dell'utente, esegue le seguenti operazioni:
 
 \begin{itemize}
 \item Salva la posizione iniziale al tocco.
