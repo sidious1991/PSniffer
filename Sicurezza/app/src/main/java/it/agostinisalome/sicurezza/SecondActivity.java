@@ -83,7 +83,8 @@ public class SecondActivity extends AppCompatActivity {
         ArrayList<String> fileNames = new ArrayList<>();
         for(int i =0 ; i< files.length; i++) {
             String[] temp = files[i].toString().split("/");
-            fileNames.add(temp[3]);
+            if(!temp[3].equals(".txt"))
+                fileNames.add(temp[3]);
             Log.w("file i", temp[3]);
         }
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
@@ -108,10 +109,8 @@ public class SecondActivity extends AppCompatActivity {
         Toast.makeText(this, "close view service!", Toast.LENGTH_SHORT).show();
         Intent i=new Intent(this,FilterService.class);
         stopService(i);
-
     }
     private BroadcastReceiver bReceiver = new BroadcastReceiver(){
-
         @Override
         public void onReceive(Context context, Intent intent) {
             //put here whaterver you want your activity to do with the intent received

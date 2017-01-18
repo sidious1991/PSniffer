@@ -3,11 +3,13 @@ package it.agostinisalome.sicurezza;
 import android.app.IntentService;
 import android.content.Intent;
 import android.content.Context;
+import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -39,10 +41,14 @@ public class RegisterService extends IntentService {
         Process process = null;
 
         boolean errorStream=false;
-
+        File folder = new File("mnt/sdcard/sicurezzaReg");
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
         String[] commands = new String[2];
         commands[0] = "su";
         Log.w("flag",intent.getStringExtra("flag")+"");
+
         if(intent.getStringExtra("flag")!= null && intent.getStringExtra("flag").equals("hex"))
             commands[1] = "tcpdump -i wlan0 -XX -tttt > mnt/sdcard/sicurezzaReg/"+intent.getStringExtra("path");
         else
