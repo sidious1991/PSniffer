@@ -29,6 +29,8 @@
 \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
 \usepackage{subfigure}
 
+\usepackage{url}
+
 \linespread{1.2} % Line spacing
 
 %\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
@@ -308,7 +310,8 @@ Inoltre nella tabella seguente vengono riassunti per ogni \textit{app} i \textit
 \end{figure}
 
 \subsection{Test integrativi sulle modalit\'a di utilizzo della scheda di rete}
-
+Per illustrare le differenze riguardanti la cattura dei pacchetti nell'utilizzo delle diverse modalit\'a di funzionamento della scheda di rete abbiamo effettuato test ulteriori su una piattaforma \textit{Linux} (\textit{Linux Mint 17.1 Cinnamon-64 bit}). Abbiamo condotto i test utilizzando la modalit\'a \textit{promiscua} e la modalit\'a \textit{monitor}. La modalit\'a promiscua \'e una modalit\'a di controllo in cui l'interfaccia di rete cablata o wireless filtra tutto il traffico di rete che l'unit\'a centrale (CPU) riesce ad analizzare; la sostanziale differenza \'e che la modalit\'a non promiscua analizza soltanto il frame che riceve o che destina. Adottando tale modalit\'a siamo stati in grado di catturare un sottoinsieme dei pacchetti \textit{multicast} identificati come appartenenti al protocollo \textit{IGMP}, destinati ad \textit{IP} della \textit{LAN} differenti dall'\textit{host tcpdump}. D'altro canto la modalit\'a \textit{monitor} permette la cattura di pacchetti della rete senza il bisogno di essere associati ad un \textit{access point} ma si applica esclusivamente a reti \textit{wireless}. Nel nostro test abbiamo notato una formattazione dei pacchetti totalmente differente da quella adottata dalla modalit\'a \textit{promiscua} che non ci ha permesso di isolare pacchetti appartenenti ad altri \textit{IP}. Un'altra motivazione che ci ha indotto a preferire la prima modalit\'a \'e legata al fatto che, nella modalit\'a \textit{monitor}, il \textit{wireless adapter} non controlla il \textit{CRC} dei pacchetti catturati e pertanto alcuni di questi pu\'o facilmente risultare corrotto, impedendo una corretta lettura.  
+ 
 % Content
 
 %----------------------------------------------------------------------------------------
@@ -324,17 +327,13 @@ Per quanto riguarda lo \textit{sniffer}, un utilizzo pi\'u esteso delle opzioni 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
+\newpage
 
-\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
-
-\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
-Figueredo, A.~J. and Wolf, P. S.~A. (2009).
-\newblock Assortative pairing and life history strategy - a cross-cultural
-  study.
-\newblock {\em Human Nature}, 20:317--330.
- 
+\begin{thebibliography}{99}
+\bibitem{notes} \url{http://www.androidtcpdump.com}
+\bibitem{notes} \url{http://www.tcpdump.org}
+\bibitem{notes} \url{https://developer.android.com}
+\bibitem{notes} \url{https://en.wikipedia.org}
 \end{thebibliography}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}
